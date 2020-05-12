@@ -2,18 +2,15 @@
 
 module.exports = {
 
-  client: 'postgresql',
-  connection: {
-    database: 'tasks',
-    user:     'postgres',
-    password: '123456'
+  development: {
+    client: 'sqlite3',
+    connection: {
+      filename: './config/db.sqlite'
+    },
+    migrations: {
+      directory: './migrations'
+    },
+    useNullAsDefault: true,
   },
-  pool: {
-    min: 2,
-    max: 10
-  },
-  migrations: {
-    tableName: 'knex_migrations'
-  }
 
 };
